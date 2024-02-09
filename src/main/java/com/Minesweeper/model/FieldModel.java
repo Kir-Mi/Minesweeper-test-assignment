@@ -1,10 +1,10 @@
 package com.Minesweeper.model;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Builder
+@AllArgsConstructor
 public class FieldModel {
     private String[][] field;
 }
