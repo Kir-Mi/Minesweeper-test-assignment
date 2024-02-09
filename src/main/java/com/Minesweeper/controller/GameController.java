@@ -3,7 +3,8 @@ package com.Minesweeper.controller;
 import com.Minesweeper.dto.FieldDto;
 import com.Minesweeper.dto.NewGameDto;
 import com.Minesweeper.dto.TurnDto;
-import com.Minesweeper.service.GameService;
+import com.Minesweeper.service.GameServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class GameController {
-    private final GameService service;
+    private final GameServiceImpl service;
 
     @PostMapping("/new")
-    public FieldDto createGame(NewGameDto newGameDto) {
-
+    public FieldDto createGame(@Valid NewGameDto newGameDto) {
+        return service.createGame(newGameDto);
     }
 
     @PostMapping("/turn")
-    public FieldDto turnCell(TurnDto turnDto) {
-
+    public FieldDto turnCell(@Valid TurnDto turnDto) {
+        return service.turnCell(turnDto);
     }
 }
