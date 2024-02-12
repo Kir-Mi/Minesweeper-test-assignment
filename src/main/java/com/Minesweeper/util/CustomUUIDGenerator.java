@@ -8,7 +8,7 @@ import java.util.Random;
 public class CustomUUIDGenerator {
     private static final String HEX_CHARS = "0123456789ABCDEF";
 
-    public static String generateCustomUUID() {
+    public String generateCustomUUID() {
         StringBuilder uuidBuilder = new StringBuilder();
 
         for (int i = 0; i < 8; i++) {

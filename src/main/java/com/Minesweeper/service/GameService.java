@@ -1,11 +1,9 @@
 package com.Minesweeper.service;
 
-import com.Minesweeper.dto.FieldDto;
-import com.Minesweeper.dto.NewGameDto;
-import com.Minesweeper.dto.TurnDto;
+import com.Minesweeper.dto.*;
 
 public interface GameService {
     FieldDto createGame(NewGameDto newGameDto);
 
-    public FieldDto turnCell(TurnDto turnDto);
+    FieldDto turnCell(TurnDto turnDto);
 }

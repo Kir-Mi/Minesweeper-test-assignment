@@ -1,19 +1,16 @@
 package com.Minesweeper.dto;
 
-import com.Minesweeper.model.FieldModel;
-import com.Minesweeper.util.TwoDimensionalArrayConverter;
-import jakarta.persistence.Convert;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class FieldDto {
-    private String gameId;
+    private String game_id;
     private int width;
     private int height;
-    private int minesCount;
+    private int mines_count;
     private boolean completed;
-    @Convert(converter = TwoDimensionalArrayConverter.class)
-    private FieldModel fieldModel;
+    private String[][] field;
 }

@@ -9,9 +9,9 @@ import lombok.Data;
 @Builder
 public class TurnDto {
     @Pattern(regexp = "\\b[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\\b")
-    private String gameId;
-    @PositiveOrZero
+    private String game_id;
+    @PositiveOrZero(message = "Координаты должны быть положительные")
     private int col;
-    @PositiveOrZero
+    @PositiveOrZero(message = "Координаты должны быть положительные")
     private int row;
 }

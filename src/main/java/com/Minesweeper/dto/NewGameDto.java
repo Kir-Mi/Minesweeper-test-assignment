@@ -1,17 +1,22 @@
 package com.Minesweeper.dto;
 
-import com.Minesweeper.validator.MinesCount;
-import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
 @Data
 @Builder
+@Validated
 public class NewGameDto {
-    @Size(min = 2, max = 30)
+    @Min(value = 2, message = "Значение поля должно быть больше 2")
+    @Max(value = 30, message = "Значение поля должно быть меньше 30")
     private int width;
-    @Size(min = 2, max = 30)
+    @Min(value = 2, message = "Значение поля должно быть больше 2")
+    @Max(value = 30, message = "Значение поля должно быть меньше 30")
     private int height;
-    @MinesCount
+    @JsonProperty("mines_count")
     private int minesCount;
 }
