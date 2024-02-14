@@ -1,7 +1,7 @@
 package com.Minesweeper.service;
 
 import com.Minesweeper.dto.*;
-import com.Minesweeper.exceptions.MyApplicationException;
+import com.Minesweeper.exceptions.*;
 import com.Minesweeper.mapper.FieldMapper;
 import com.Minesweeper.model.*;
 import com.Minesweeper.repository.*;
